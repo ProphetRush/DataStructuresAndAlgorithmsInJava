@@ -190,7 +190,7 @@ public class pHashMap<K,V> implements pMap<K,V> {
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override

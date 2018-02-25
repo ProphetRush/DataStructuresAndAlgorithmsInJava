@@ -5,6 +5,8 @@ import com.Prophet.pList.pLinkedList;
 import com.Prophet.pList.pList;
 import com.Prophet.pMap.pHashMap;
 import com.Prophet.pMap.pMap;
+import com.Prophet.pSet.pHashSet;
+import com.Prophet.pSet.pSet;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,27 +14,23 @@ import java.util.HashMap;
 public class Main {
 
     public static void main(String[] args) {
-        pMap<String, Integer> map = new pHashMap<>();
-        map.put("Smith", 30);
-        map.put("Anderson", 31);
-        map.put("Lewis", 29);
-        map.put("Cook", 29);
-        map.put("Smith", 65);
+        pSet<String> set = new pHashSet<>();
+        set.add("Smith");
+        set.add("Anderson");
+        set.add("Lewis");
+        set.add("Cook");
+        set.add("Smith");
 
-        System.out.println("Entries in map: " + map);
+        System.out.println("Elements in set: " + set);
+        System.out.println("Number of elements in set: " + set.size());
+        System.out.println("Is Smith in set? " + set.contains("Smith"));
 
-        System.out.println("The age for " + "Lewis is " +
-                map.get("Lewis"));
+        set.remove("Smith");
+        System.out.print("Names in set in uppercase are ");
+        for (String s: set)
+            System.out.print(s.toUpperCase() + " ");
 
-        System.out.println("Is Smith in the map? " +
-                map.containsKey("Smith"));
-        System.out.println("Is age 33 in the map? " +
-                map.containsValue(33));
-
-        map.remove("Smith");
-        System.out.println("Entries in map: " + map);
-
-        map.clear();
-        System.out.println("Entries in map: " + map);
+        set.clear();
+        System.out.println("\nElements in set: " + set);
     }
 }
