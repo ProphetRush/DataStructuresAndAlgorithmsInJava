@@ -48,5 +48,6 @@ public class Main {
         BST<Integer> intTree = new BST<>(numbers);
         System.out.print("\nInorder (sorted): ");
         intTree.inOrderTraversal();
+
     }
 }
