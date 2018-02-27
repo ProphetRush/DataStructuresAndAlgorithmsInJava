@@ -4,9 +4,9 @@ import java.util.Iterator;
 
 public class pLinkedList<E> extends pAbstactList<E>{
 
-    private Node<E> head, tail;
+    Node<E> head, tail;
 
-    private static class Node<E>{
+    public static class Node<E>{
         E e;
         Node<E> next;
         public Node(E e){
@@ -231,5 +231,18 @@ public class pLinkedList<E> extends pAbstactList<E>{
             else result.append("]");
         }
         return result.toString();
+    }
+
+
+    public void reverse(){
+        Node pre = null;
+        Node cur = head;
+        while(cur != null){
+            Node tmp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = tmp;
+        }
+        head = pre;
     }
 }
